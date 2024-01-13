@@ -1,6 +1,13 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { Yusei_Magic } from "next/font/google";
+import { twMerge } from "tailwind-merge";
+
+export const yusei = Yusei_Magic({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-merri",
+});
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
