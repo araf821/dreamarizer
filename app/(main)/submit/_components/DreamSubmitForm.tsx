@@ -16,10 +16,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { cn, yusei } from "@/lib/utils";
 import { dreamSubmission } from "@/actions/dream";
+import { useRouter } from "next/navigation";
 
 interface DreamSubmitFormProps {}
 
 const DreamSubmitForm = ({}: DreamSubmitFormProps) => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof DreamFormValidator>>({
     resolver: zodResolver(DreamFormValidator),
     defaultValues: {
@@ -30,8 +33,9 @@ const DreamSubmitForm = ({}: DreamSubmitFormProps) => {
 
   const onSubmit = async (values: z.infer<typeof DreamFormValidator>) => {
     try {
-      dreamSubmission(values).then((data) => {
-        console.log(data);
+      dreamSubmission(values).then((response) => {
+        console.log(response);
+        router.push(`/story/${response.data?.id}`);
       });
     } catch (error) {
       console.error(error);
