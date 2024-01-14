@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 interface NavbarProps {}
 
@@ -36,6 +37,9 @@ const Navbar = ({}: NavbarProps) => {
           </h2>
         </Link>
         <NavLinks />
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </div>
     </div>
   );

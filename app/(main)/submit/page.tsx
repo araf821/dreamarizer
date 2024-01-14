@@ -4,7 +4,7 @@ import DreamSubmitForm from "./_components/DreamSubmitForm";
 
 const SubmitPage = () => {
   return (
-    <div className="mx-auto my-16 max-w-screen-md px-4">
+    <div className="mx-auto my-12 max-w-screen-md px-4">
       {/* Header */}
       <div className="space-y-2">
         <h2 className={cn("text-2xl sm:text-3xl md:text-4xl", yusei.className)}>

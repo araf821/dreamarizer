@@ -7,7 +7,7 @@ export default function Home() {
       <h4 className="text-2xl text-white md:text-3xl">Analyzer. Summarizer.</h4>
       <h1
         className={cn(
-          "hero-heading text-7xl font-light tracking-widest",
+          "hero-heading text-5xl font-light tracking-widest sm:text-6xl md:text-7xl",
           yusei.className,
         )}
       >

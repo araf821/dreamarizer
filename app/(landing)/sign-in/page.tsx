@@ -9,7 +9,7 @@ const SignInPage = ({}: SignInPageProps) => {
       <p className="text-center md:text-lg">Welcome to</p>
       <h1
         className={cn(
-          "hero-heading pb-12 text-4xl md:text-7xl",
+          "hero-heading pb-12 text-5xl sm:text-6xl md:text-7xl",
           yusei.className,
         )}
       >

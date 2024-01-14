@@ -8,7 +8,7 @@ interface LogoutButtonProps {
 
 const LogoutButton = ({ children }: LogoutButtonProps) => {
   const onClick = () => {
-    signOut();
+    signOut({ callbackUrl: "/" });
   };
 
   return (
