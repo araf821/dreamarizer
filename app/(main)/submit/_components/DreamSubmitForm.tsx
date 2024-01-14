@@ -15,6 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { cn, yusei } from "@/lib/utils";
+import { dreamSubmission } from "@/actions/dream";
 
 interface DreamSubmitFormProps {}
 
@@ -28,7 +29,13 @@ const DreamSubmitForm = ({}: DreamSubmitFormProps) => {
   });
 
   const onSubmit = async (values: z.infer<typeof DreamFormValidator>) => {
-    console.log(values);
+    try {
+      dreamSubmission(values).then((data) => {
+        console.log(data);
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
