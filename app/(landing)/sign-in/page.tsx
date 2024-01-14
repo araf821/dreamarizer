@@ -15,7 +15,9 @@ const SignInPage = ({}: SignInPageProps) => {
       >
         Dreamarizer
       </h1>
-      <Social />
+      <div className="mx-auto">
+        <Social />
+      </div>
     </div>
   );
 };

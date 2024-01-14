@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import Image from "next/image";
+import Story from "../_components/Story";
 
 interface pageProps {
   params: {
@@ -8,24 +9,9 @@ interface pageProps {
 }
 
 const page = async ({ params }: pageProps) => {
-  const story = await db.story.findUnique({
-    where: {
-      id: params.storyId,
-    },
-  });
-
   return (
-    <div>
-      <div className="relative mx-auto mb-8 mt-12 aspect-[16/10] w-[768px]">
-        <Image
-          src={story?.imageUrl || ""}
-          alt=""
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      <p>{story?.story}</p>
+    <div className="mx-auto max-w-screen-md px-4">
+      <Story storyId={params.storyId} />
     </div>
   );
 };

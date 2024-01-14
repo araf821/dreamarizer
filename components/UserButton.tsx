@@ -30,7 +30,7 @@ const UserButton = ({}: UserButtonProps) => {
 
       <DropdownMenuContent className="w-40" align="end">
         <LogoutButton>
-          <DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
             <LogOut className="mr-2 h-4 w-4" />
             Logout
           </DropdownMenuItem>

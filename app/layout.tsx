@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { Toaster } from "sonner";
 
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={cn("flex min-h-[100dvh] flex-col", josefin.className)}>
+          <Toaster richColors position="bottom-center" />
           <Navbar />
           <div className="flex-1">{children}</div>
         </body>
