@@ -18,9 +18,18 @@ const NavLinks = ({}: NavLinksProps) => {
       <li>
         <Link href="/dashboard">Dashboard</Link>
       </li>
-      {user && (
+      {user ? (
         <li>
           <UserButton />
+        </li>
+      ) : (
+        <li>
+          <Link
+            href="/sign-in"
+            className="rounded-lg bg-pink-300 px-2 py-1.5 pt-2 font-medium text-black"
+          >
+            Sign In
+          </Link>
         </li>
       )}
     </ul>

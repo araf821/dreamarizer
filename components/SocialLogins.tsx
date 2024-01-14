@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
 import { defaultLoginRedirect } from "@/routes";
 import { useSearchParams } from "next/navigation";
+import { Button } from "./ui/button";
 
 interface SocialProps {}
 
@@ -19,13 +20,14 @@ const Social = ({}: SocialProps) => {
 
   return (
     <div className="flex w-full items-center gap-2">
-      <button
-        className="flex w-full items-center justify-between gap-4 rounded-md bg-[#ffeffb] px-4 py-3 text-lg"
+      <Button
+        variant="default"
+        className="space-x-4 text-lg md:text-xl"
         onClick={() => onClick("google")}
       >
         <FcGoogle className="h-6 w-6" />
         <p className="pt-1">Sign In With Google</p>
-      </button>
+      </Button>
       {/* <button className="w-full" onClick={() => onClick("github")}>
         <FaGithub className="h-5 w-5" />
       </button> */}
