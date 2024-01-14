@@ -16,7 +16,7 @@ const Navbar = ({}: NavbarProps) => {
       className={cn(
         "z-20 flex h-20 items-center justify-center py-4 shadow-[0_4px_8px] shadow-black/10",
         {
-          "fixed inset-x-0 top-0 text-white shadow-none":
+          "fixed inset-x-0 top-0 z-50 text-white shadow-none":
             pathname === "/" || pathname === "/sign-in",
         },
       )}

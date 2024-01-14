@@ -3,6 +3,8 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
@@ -11,17 +13,21 @@ export const metadata: Metadata = {
   description: "An application.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
   return (
-    <html lang="en">
-      <body className={cn("flex min-h-[100dvh] flex-col", josefin.className)}>
-        <Navbar />
-        <div className="flex-1">{children}</div>
-      </body>
-    </html>
+    <SessionProvider session={session}>
+      <html lang="en">
+        <body className={cn("flex min-h-[100dvh] flex-col", josefin.className)}>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+        </body>
+      </html>
+    </SessionProvider>
   );
 }
